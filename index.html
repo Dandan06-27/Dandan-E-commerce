@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>McDonald's Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at center, #ffde59 0%, #ff914d 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #ff914d;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      color: #d52b1e;
+      margin-bottom: 30px;
+    }
+
+    .login-container input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 50px;
+      border: 3px solid #ccc;
+      font-size: 16px;
+      position: center;
+    }
+
+    .login-container button {
+      background-color: #d52b1e;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 100px;
+      width: 50%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-container button:hover {
+      background-color: #b82218;
+    }
+
+    .error-message {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 10px;
+      position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <img src="Logo.jpg" alt="McDonald's Logo" class="logo" />
+    <h1>Sign In</h1>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="password" />
+    <button onclick="login()">Login</button>
+    <div class="error-message" id="error-message"></div>
+  </div>
+
+  <script>
+    function login() {
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const errorMessage = document.getElementById("error-message");
+
+  // Dummy credentials
+  const validUsername = "admin";
+  const validPassword = "password123";
+
+  if (username === validUsername && password === validPassword) {
+    errorMessage.textContent = "";
+    // Redirect to index.html
+    window.location.href = "login.html";
+  } else {
+    errorMessage.textContent = "Invalid username or password. Please try again.";
+  }
+}
+
+  </script>
+
+</body>
+</html>
